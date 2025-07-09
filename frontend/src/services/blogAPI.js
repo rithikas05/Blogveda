@@ -36,7 +36,9 @@ export const deleteBlog = (id) =>
 export const getFeaturedBlogs = async () => {
   const res = await API.get("/featured");
   return res.data;
+  
 };
+console.log("Featured API hit"); 
 
 
   
