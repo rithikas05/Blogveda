@@ -61,20 +61,20 @@ function Home() {
     setFilteredBlogs(filtered);
   }, [searchTerm, blogs]);
 
-  useEffect(() => {
-    async function fetchFeatured() {
-      try {
-        const res = await getFeaturedBlogs();
-        console.log("getFeaturedBlogs response:", res.data); // ✅ Debugging
-        const featuredArray = Array.isArray(res.data) ? res.data : res.data.blogs;
-        setFeatured(featuredArray);
-      } catch (err) {
-        console.error(err);
-        console.error("Failed to load featured blogs");
-      }
+useEffect(() => {
+  async function fetchFeatured() {
+    try {
+      const featuredArray = await getFeaturedBlogs(); // 👈 fixed
+      console.log("getFeaturedBlogs response:", featuredArray);
+      setFeatured(featuredArray);
+    } catch (err) {
+      console.error(err);
+      console.error("Failed to load featured blogs");
     }
-    fetchFeatured();
-  }, []);
+  }
+  fetchFeatured();
+}, []);
+
 
   return (
     <div className="min-h-screen bg-background dark:bg-[#0b0b0b] text-darkText dark:text-gray-100 px-4 py-12">
