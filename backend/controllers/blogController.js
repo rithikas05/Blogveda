@@ -150,9 +150,12 @@ export const deleteBlog = async (req, res) => {
 //get featured blogs
 export const getFeaturedBlogs = async (req, res) => {
   try {
-    const blogs = await Blog.find().sort({ views: -1 }).limit(5);
+    const blogs = await Blog.find({ featured: true })
+      .sort({ createdAt: -1 })
+      .limit(5)
+      .populate("user", "name");
     res.status(200).json(blogs);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json({ message: "Failed to fetch featured blogs" });
   }
 };
