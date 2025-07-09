@@ -33,9 +33,10 @@ export const deleteBlog = (id) =>
     },
   });
 
-  export const getFeaturedBlogs = async () =>
-  await axios.get("/api/blogs/featured");
-
+export const getFeaturedBlogs = async () => {
+  const res = await API.get("/featured");
+  return res.data;
+};
 
 
   
