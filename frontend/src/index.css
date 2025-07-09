@@ -1,0 +1,14 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Glowing Brand Effect */
+.glow-text {
+  text-shadow: 0 0 8px #ffd70099, 0 0 12px #ffd70066;
+}
+
+/* Glowing Title Effect */
+.glow-title {
+  text-shadow: 0 0 3px #4b008280, 0 0 8px #ffd70040;
+}
