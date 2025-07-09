@@ -11,10 +11,16 @@ import userRoutes from './routes/userRoutes.js';
 const app = express();
 
 // Fixed CORS config
-app.use(cors({
-  origin: "http://localhost:5173", // set to your frontend URL
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // for local dev
+      "https://blogveda-srk4.vercel.app", // for deployed frontend
+    ],
+    credentials: true,
+  })
+);
+
 
 app.use(express.json());
 
