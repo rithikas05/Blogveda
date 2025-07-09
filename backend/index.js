@@ -15,7 +15,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // for local dev
-      "https://blogveda-srk4.vercel.app", // for deployed frontend
+      "https://blogveda.vercel.app",, // for deployed frontend
     ],
     credentials: true,
   })
