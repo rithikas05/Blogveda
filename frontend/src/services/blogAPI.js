@@ -7,8 +7,8 @@ const API = axios.create({
 
 export const getAllBlogs = () => API.get('/');
 
-export const getBlogById = (id) => API.get(`/${id}`); // ✅ Used in EditBlog
-export const getBlogBySlug = (slug) => API.get(`/slug/${slug}`); // ✅ Used in ViewBlog
+export const getBlogById = (id) => API.get(`/${id}`); // Used in EditBlog
+export const getBlogBySlug = (slug) => API.get(`/slug/${slug}`); //  Used in ViewBlog
 
 export const createBlog = (formData) =>
   API.post('/', formData, {
